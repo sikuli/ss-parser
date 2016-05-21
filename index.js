@@ -12,5 +12,5 @@ module.exports = (inFile, outDir, opts) => {
   if (!fs.statSync(outDir).isDirectory() || !path.isAbsolute(outDir)) {
     throw new Error('Output path must be an absolute path to a direcoty.');
   }
-  parser(inFile, outDir, opts);
+  parser(inFile, outDir, opts || {});
 };
