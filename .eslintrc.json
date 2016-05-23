@@ -3,5 +3,13 @@
     "env": {
       "node": true,
       "mocha": true
-    }
+    },
+    "rules": {
+    "camelcase": [1,{ "properties": "always" }],
+    "complexity": [2, 5],
+    "max-depth": [2, 2],
+    "max-statements": [2, 10],
+    "no-sync": 2,
+    "comma-dangle": [0, "never"]
+  }
 }
