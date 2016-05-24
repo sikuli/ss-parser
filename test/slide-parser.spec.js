@@ -33,12 +33,12 @@ describe('slide parser', () => {
     const expected = {
       slide: 2,
       screenshot: path.join(targetDir, 'ppt', 'media', 'image00.png'),
-      target: {
-        x: 20,
-        y: 40,
-        width: 200,
-        height: 400
-      },
+      target: [{
+        x: 3905725,
+        y: 1037075,
+        width: 1338000,
+        height: 1221000
+      }],
       action: 'Click',
       displayItems: []
     };
