@@ -6,7 +6,7 @@ const path = require('path');
 const os = require('os');
 const rmdir = require('rimraf');
 const decompress = require('decompress');
-const slideParser = require('../lib/parsers/slide-parser');
+const slideParser = require('../lib/parsers/slideParser');
 
 describe('slide parser', () => {
   let targetDir = path.join(os.tmpDir(), 'sikuli.slides-');
@@ -34,10 +34,10 @@ describe('slide parser', () => {
       slide: 2,
       screenshot: path.join(targetDir, 'ppt', 'media', 'image00.png'),
       target: [{
-        x: 3905725,
-        y: 1037075,
-        width: 1338000,
-        height: 1221000
+        x: 410,
+        y: 109,
+        width: 140,
+        height: 128
       }],
       action: 'Click',
       displayItems: []
