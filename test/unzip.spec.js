@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const rmdir = require('rimraf');
+const readdir = require('bluebird').promisify(fs.readdir);
 const parse = require('../lib');
 
 describe('unzip', () => {
@@ -24,8 +25,12 @@ describe('unzip', () => {
   it('unzips a pptx file to the given directory', (done) => {
     const pptxFile = path.join(__dirname, 'fixtures', 'simple.pptx');
     parse(pptxFile, targetDir, { type: 'pptx' })
+      .then(() =>
+        readdir(path.join(targetDir, 'ppt', 'slides'))
+      )
       .then((files) => {
-        expect(files).to.have.length(37);
+        expect(files).to.have.length(3);
+        expect(files).to.include.members(['_rels', 'slide1.xml', 'slide2.xml']);
         done();
       })
       .catch((e) => done(e));
