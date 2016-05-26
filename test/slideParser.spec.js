@@ -28,6 +28,25 @@ describe('slide parser', () => {
     });
   });
 
+  it('parses a slide with an action', (done) => {
+    const slideFile = path.join(targetDir, 'ppt', 'slides', 'slide1.xml');
+    const expected = {
+      slide: 1,
+      screenshot: undefined,
+      target: [],
+      action: { name: 'open',
+                value: 'https://www.wikipedia.org/'
+              },
+      displayItems: []
+    };
+    slideParser(slideFile)
+      .then((actual) => {
+        expect(actual).to.deep.equal(expected);
+        done();
+      })
+      .catch((e) => done(e));
+  });
+
   it('parses a slide with a target and an action', (done) => {
     const slideFile = path.join(targetDir, 'ppt', 'slides', 'slide2.xml');
     const expected = {
@@ -39,7 +58,9 @@ describe('slide parser', () => {
         width: 140,
         height: 128
       }],
-      action: 'click',
+      action: { name: 'click',
+                value: undefined
+              },
       displayItems: []
     };
     slideParser(slideFile)
