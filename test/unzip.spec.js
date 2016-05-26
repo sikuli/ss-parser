@@ -23,13 +23,13 @@ describe('unzip', () => {
   });
 
   it('unzips a pptx file to the given directory', (done) => {
-    const pptxFile = path.join(__dirname, 'fixtures', 'simple.pptx');
+    const pptxFile = path.join(__dirname, 'fixtures', 'example.pptx');
     parse(pptxFile, targetDir, { type: 'pptx' })
       .then(() =>
         readdir(path.join(targetDir, 'ppt', 'slides'))
       )
       .then((files) => {
-        expect(files).to.have.length(3);
+        expect(files).to.have.length(5);
         expect(files).to.include.members(['_rels', 'slide1.xml', 'slide2.xml']);
         done();
       })

@@ -10,7 +10,7 @@ const slideParser = require('../lib/parsers/slideParser');
 
 describe('slide parser', () => {
   let targetDir = path.join(os.tmpDir(), 'sikuli.slides-');
-  const pptxFile = path.join(__dirname, 'fixtures', 'simple.pptx');
+  const pptxFile = path.join(__dirname, 'fixtures', 'example.pptx');
 
   before((done) => {
     mkdtemp(targetDir)
