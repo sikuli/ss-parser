@@ -1,4 +1,4 @@
-const unitConverter = require('../lib/utils/unitConverter');
+const unitConverter = require('../lib/interpreters/unitConverter');
 const expect = require('chai').expect;
 
 describe('unit converter', () => {

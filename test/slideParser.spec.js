@@ -39,7 +39,7 @@ describe('slide parser', () => {
         width: 140,
         height: 128
       }],
-      action: 'Click',
+      action: 'click',
       displayItems: []
     };
     slideParser(slideFile)
