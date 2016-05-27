@@ -1,7 +1,8 @@
-/* eslint no-console: "off" */
+/* eslint no-console: "off", func-names: "off" */
 const CLIEngine = require('eslint').CLIEngine;
 
-describe('linting', () => {
+describe('linting', function () {
+  this.timeout(0);
   it('performs source code linting', (done) => {
     const cli = new CLIEngine({ useEslintrc: true });
     const report = cli.executeOnFiles(['test/', 'lib/']);
