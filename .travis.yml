@@ -3,6 +3,8 @@ node_js:
   - "6"
 install:
   - npm install
+-before_script:
+  - npm run build
 script:
   - npm test
 after_success:
