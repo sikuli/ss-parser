@@ -29,7 +29,7 @@ describe('unzip', () => {
         readdir(path.join(targetDir, 'ppt', 'slides'))
       )
       .then((files) => {
-        expect(files).to.have.length(5);
+        expect(files).to.have.length.above(5);
         expect(files).to.include.members(['_rels', 'slide1.xml', 'slide2.xml']);
         done();
       })
