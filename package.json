@@ -10,9 +10,9 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp",
-    "test": "mocha",
-    "cover": "./node_modules/istanbul/lib/cli.js cover _mocha",
-    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "test": "mocha --recursive",
+    "cover": "./node_modules/istanbul/lib/cli.js cover _mocha -- --recursive",
+    "coveralls": "istanbul cover _mocha -- --recursive --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "author": "Khalid Alharbi",
   "license": "MIT",
